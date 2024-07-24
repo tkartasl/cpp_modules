@@ -6,13 +6,14 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 10:56:49 by tkartasl          #+#    #+#              #
-#    Updated: 2024/07/24 11:42:57 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/07/24 15:19:32 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
-SRCS = megaphone.cpp
+SRCS = Contact.cpp \
+		PhoneBook.cpp
 
 CPP_FLAGS = c++ -Wall -Wextra -Werror -std=c++11
 
