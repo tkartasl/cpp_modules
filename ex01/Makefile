@@ -5,15 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/24 10:56:49 by tkartasl          #+#    #+#              #
-#    Updated: 2024/07/24 15:19:32 by tkartasl         ###   ########.fr        #
+#    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
+#    Updated: 2024/07/25 13:13:20 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
 SRCS = Contact.cpp \
-		PhoneBook.cpp
+		PhoneBook.cpp \
+		main.cpp
 
 CPP_FLAGS = c++ -Wall -Wextra -Werror -std=c++11
 

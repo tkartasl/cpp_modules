@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:55:58 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/25 09:30:03 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:30:29 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,14 @@ PhoneBook::~PhoneBook(void)
 	return;
 }
 
-void	PhoneBook::GetContact(int index) const
+u_int8_t	PhoneBook::GetCount(void) const
 {
-	if (index < 0 || index > 7)
-		std::cout << "index has to be within 0-7 range" << std::endl;
-	else
-	{
-		std::cout << this->_contacts[index].GetFirstName() << std::endl;
-		std::cout << this->_contacts[index].GetLastName() << std::endl;
-		std::cout << this->_contacts[index].GetNickName() << std::endl;
-		std::cout << this->_contacts[index].GetPhoneNumber() << std::endl;
-		std::cout << this->_contacts[index].GetDarkestSecret() << std::endl;
-	}
+	return this->_count;
+}
+
+Contact	PhoneBook::GetContact(u_int8_t index) const
+{
+	return this->_contacts[index];	
 }
 
 void	PhoneBook::SetContact(Contact contact)
