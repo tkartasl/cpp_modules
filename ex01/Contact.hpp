@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:56:15 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/24 15:11:40 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/25 09:16:37 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ class Contact
 {
 public:
 
-	Contact( void );
-	~Contact( void );
+	Contact(void);
+	~Contact(void);
 
-	void		SetFirstName( std::string );
-	void		SetLastName( std::string );
-	void		SetNickName( std::string );
-	void		SetPhoneNumber( std::string );
-	void		SetDarkestSecret( std::string );
-	std::string	GetFirstName( std::string ) const;
-	std::string	GetLastName( std::string ) const;
-	std::string GetNickName( std::string ) const;
-	std::string GetPhoneNumber( std::string ) const;
-	std::string GetDarkestSecret( std::string ) const;
+	void		SetFirstName(std::string);
+	void		SetLastName(std::string);
+	void		SetNickName(std::string);
+	void		SetPhoneNumber(std::string);
+	void		SetDarkestSecret(std::string);
+	std::string	GetFirstName(void) const;
+	std::string	GetLastName(void) const;
+	std::string GetNickName(void) const;
+	std::string GetPhoneNumber(void) const;
+	std::string GetDarkestSecret(void) const;
 
 private:
 

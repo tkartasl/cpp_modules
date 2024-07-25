@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:56:05 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/24 15:13:51 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/25 09:08:04 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ class PhoneBook
 {
 public:
 
-	PhoneBook( void );
-	~PhoneBook( void );
+	PhoneBook(void);
+	~PhoneBook(void);
 
-	void	GetContact( int index ) const;
-	void	SetContact( Contact contact );
+	void		SetContact(Contact contact);
+	void		SetCount(u_int8_t _count);
+	void		GetContact(int index) const;
+	u_int8_t	GetCount(void) const;	
 
 private:
 
-	int	_count;
-	Contact _contacts[MaxContacts];
+	u_int8_t	_count;
+	Contact		_contacts[MaxContacts];
 };
 
 #endif
