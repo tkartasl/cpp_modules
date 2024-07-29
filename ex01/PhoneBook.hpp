@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:56:05 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/26 14:00:25 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/29 10:56:19 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ private:
 	int 		VerifyIndex(std::string str) const;
 	void		PrintContact(u_int8_t index)  const;
 	void		SetContact(Contact contact);
+
 };
 
 #endif
