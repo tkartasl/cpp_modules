@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:55:58 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/29 11:10:38 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:28:17 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ u_int8_t	PhoneBook::GetCount(void) const
 	return this->_count;
 }
 
-Contact	PhoneBook::GetContact(u_int8_t index) const
+Contact	PhoneBook::_GetContact(u_int8_t index) const
 {
 	return this->_contacts[index];	
 }
 
-void	PhoneBook::SetContact(Contact contact)
+void	PhoneBook::_SetContact(Contact contact)
 {
 	static int	index;
 
@@ -49,7 +49,7 @@ void	PhoneBook::SetContact(Contact contact)
 	index++;
 }
 
-int PhoneBook::VerifyIndex(std::string str) const
+int PhoneBook::_VerifyIndex(std::string str) const
 {
 	int	i;
 
@@ -77,7 +77,7 @@ int PhoneBook::VerifyIndex(std::string str) const
 	}
 }
 
-int	PhoneBook::GetIndex(void) const
+int	PhoneBook::_GetIndex(void) const
 {
 	std::string index;
 	int			i;
@@ -87,7 +87,7 @@ int	PhoneBook::GetIndex(void) const
 	{
 		std::cout << "Give index(0-7) to search for a contact: ";
 		std::getline(std::cin, index);
-		i = VerifyIndex(index);
+		i = this->_VerifyIndex(index);
 		if (i < 0)
 			continue;
 		else if (this->GetCount() == 0)
@@ -103,7 +103,7 @@ int	PhoneBook::GetIndex(void) const
 	return (i);
 }
 
-void	PhoneBook::SetFirstRow(void) const
+void	PhoneBook::_SetFirstRow(void) const
 {
 	std::cout << std::setw (ColumnSize) << "index";
 	std::cout << " | ";
@@ -114,7 +114,7 @@ void	PhoneBook::SetFirstRow(void) const
 	std::cout << std::setw (ColumnSize) << "nickname" << std::endl;
 }
 
-void	PhoneBook::PrintTruncated(std::string str) const
+void	PhoneBook::_PrintTruncated(std::string str) const
 {
 	std::string truncated_str;
 	
@@ -123,13 +123,13 @@ void	PhoneBook::PrintTruncated(std::string str) const
 	std::cout << std::setw (ColumnSize) << truncated_str;
 }
 
-void	PhoneBook::PrintContact(u_int8_t index)  const
+void	PhoneBook::_PrintContact(u_int8_t index)  const
 {
-	std::cout << "First name: " << this->GetContact(index).GetFirstName() << std::endl;
-	std::cout << "Last name: " << this->GetContact(index).GetLastName() << std::endl;
-	std::cout << "Nickname: " << this->GetContact(index).GetNickName() << std::endl;
-	std::cout << "Phone number: " << this->GetContact(index).GetPhoneNumber() << std::endl;
-	std::cout << "Darkest secret: " << this->GetContact(index).GetDarkestSecret() << std::endl;
+	std::cout << "First name: " << this->_GetContact(index).GetFirstName() << std::endl;
+	std::cout << "Last name: " << this->_GetContact(index).GetLastName() << std::endl;
+	std::cout << "Nickname: " << this->_GetContact(index).GetNickName() << std::endl;
+	std::cout << "Phone number: " << this->_GetContact(index).GetPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << this->_GetContact(index).GetDarkestSecret() << std::endl;
 }
 
 void	PhoneBook::SearchContact(void) const
@@ -139,34 +139,34 @@ void	PhoneBook::SearchContact(void) const
 
 	index = 0;
 	i = 0;
-	SetFirstRow();
+	this->_SetFirstRow();
 	while (i < this->GetCount())
 	{
 		std::cout << std::setw (ColumnSize) << i;
 		std::cout << " | ";
-		if (this->GetContact(i).GetFirstName().length() >= ColumnSize)
-			PrintTruncated(this->GetContact(i).GetFirstName());
+		if (this->_GetContact(i).GetFirstName().length() >= ColumnSize)
+			this->_PrintTruncated(this->_GetContact(i).GetFirstName());
 		else
-			std::cout << std::setw (ColumnSize) << this->GetContact(i).GetFirstName();
+			std::cout << std::setw (ColumnSize) << this->_GetContact(i).GetFirstName();
 		std::cout << " | ";
-		if (this->GetContact(i).GetLastName().length() >= ColumnSize)
-			PrintTruncated(this->GetContact(i).GetLastName());
+		if (this->_GetContact(i).GetLastName().length() >= ColumnSize)
+			this->_PrintTruncated(this->_GetContact(i).GetLastName());
 		else
-			std::cout << std::setw (ColumnSize) << this->GetContact(i).GetLastName();
+			std::cout << std::setw (ColumnSize) << this->_GetContact(i).GetLastName();
 		std::cout << " | ";
-		if (this->GetContact(i).GetNickName().length() >= ColumnSize)
+		if (this->_GetContact(i).GetNickName().length() >= ColumnSize)
 		{
-			PrintTruncated(this->GetContact(i).GetNickName());
+			this->_PrintTruncated(this->_GetContact(i).GetNickName());
 			std::cout << std::endl;
 		}
 		else
-			std::cout << std::setw (ColumnSize) << this->GetContact(i).GetNickName() << std::endl;
+			std::cout << std::setw (ColumnSize) << this->_GetContact(i).GetNickName() << std::endl;
 		i++;
 	}
-	index = this->GetIndex();
+	index = this->_GetIndex();
 	if (index < 0)
 		return;
-	this->PrintContact(index);
+	this->_PrintContact(index);
 }
 
 void	PhoneBook::AddContact(void)
@@ -196,5 +196,5 @@ void	PhoneBook::AddContact(void)
 			i += 1;
 		}
 	}
-	this->SetContact(contact);
+	this->_SetContact(contact);
 }
