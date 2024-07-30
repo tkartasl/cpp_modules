@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:55:58 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/29 15:28:17 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:02:10 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,15 +173,22 @@ void	PhoneBook::AddContact(void)
 {
 	Contact		contact;
 	std::string	input;
-	int			i; 
+	int			i;
+	int			flag;
 	const char	*inputs[5] = {"first name", "last name", "nickname", "phone number", "darkest secret"};
 
 	i = 0;
 	while(i < 5)
 	{
+		flag = 0;
 		std::cout << "Enter " << inputs[i] << ": ";
 		std::getline(std::cin, input);
-		if (input.empty() == false)
+		for (char ch : input)
+		{
+			if (!isspace(ch))
+				flag = 1;
+		}
+		if (input.empty() == false && flag == 1)
 		{
 			if (i == 0)
 				contact.SetFirstName(input);

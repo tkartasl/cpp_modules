@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:56:15 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/25 09:16:37 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/30 10:05:56 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class Contact
 {
 public:
-
 	Contact(void);
 	~Contact(void);
 
@@ -33,7 +32,6 @@ public:
 	std::string GetDarkestSecret(void) const;
 
 private:
-
 	std::string _FirstName;
 	std::string _LastName;
 	std::string _NickName;

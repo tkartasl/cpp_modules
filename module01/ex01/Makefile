@@ -6,13 +6,13 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
-#    Updated: 2024/07/29 17:44:28 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/07/30 09:39:18 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = hordeofzombies
 
-FLAGS = -Wall -Wextra -Werror -g -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS =	main.cpp \
 		Zombie.cpp \
