@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:58:00 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/30 15:58:02 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/07/31 15:35:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 int main(int argc, char *argv[])
 {
-	//std::ifstream 	infile;
-	//std::ofstream 	outfile;
-	std::string	filename;
-	std::string	str1;
-	std::string	str2;
-	std::string	line;
-	std::size_t	index = 0;
-	std::size_t	prevIndex = 0;
+	std::ifstream 	infile;
+	std::ofstream 	outfile;
+	std::string		filename;
+	std::string		filename2;
+	std::string		str1;
+	std::string		str2;
+	std::string		buffer;
+	std::size_t		pos = 0;
 
 	if (argc != 4)
 	{
@@ -31,31 +31,30 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	filename = argv[1];
+	filename2 = filename + ".replace";
 	str1 = argv[2];
 	str2 = argv[3];
-	std::ifstream infile(filename);
-	std::ofstream outfile(filename.append(".replace"));
+	infile.open(filename);
+	outfile.open(filename2);
 	if (infile.is_open() && outfile.is_open())
 	{
-		while (std::getline(infile, line))
+		while (std::getline(infile, buffer))
 		{
-			prevIndex = index;
-			index = line.find(str2);
-			if (index != std::string::npos)
+			while (pos != std::string::npos)
 			{
-				line.substr(prevIndex, index);
-				line.append(str2);
-				outfile << line;
+				pos = buffer.find(str1, pos);
+				if (pos != std::string::npos)
+				{
+					buffer.erase(pos, str1.length());
+					buffer.insert(pos, str2);	
+				}
 			}
-			else
-				outfile << line;
-			index++;
+			outfile << buffer;
 		}
 	}
 	else
 		std::cout << "Error while opening file" << std::endl;
 	infile.close();
-	std::cout << outfile << std::endl;
 	outfile.close();
 	return (0);
 }
