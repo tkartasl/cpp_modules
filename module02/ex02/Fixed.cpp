@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:11:12 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/01 15:19:57 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:39:29 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed::Fixed( int const i )
 Fixed::Fixed( float const f)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->value = (int)(f * (float)(1 << this->fraction_bits));
+	this->value = roundf((f * (1 << this->fraction_bits)));
 	return;
 }
 
@@ -53,65 +53,121 @@ Fixed &	Fixed::operator=( Fixed const & cl )
 	return *this;
 }
 
-Fixed 	Fixed::operator+( Fixed const & cl )
+Fixed 	Fixed::operator+( Fixed const & cl ) const
 {
-	std::cout << "Addition operator called" << std::endl;
 	return Fixed(this->value + cl.getRawBits());
 }
 
-Fixed 	Fixed::operator-( Fixed const & cl )
+Fixed 	Fixed::operator-( Fixed const & cl ) const
 {
 	std::cout << "Subtraction operator called" << std::endl;
 	return Fixed(this->value - cl.getRawBits());
 }
 
-Fixed 	Fixed::operator*( Fixed const & cl )
+Fixed 	Fixed::operator*( Fixed const & cl ) const
 {
 	std::cout << "Multiplycation operator called" << std::endl;
 	return Fixed(this->value * cl.getRawBits());
 }
 
-Fixed 	Fixed::operator/( Fixed const & cl )
+Fixed 	Fixed::operator/( Fixed const & cl ) const
 {
 	std::cout << "Division operator called" << std::endl;
 	return Fixed(this->value / cl.getRawBits());
 }
 
-bool 	Fixed::operator>( Fixed const & cl )
+bool 	Fixed::operator>( Fixed const & cl ) const
 {
 	std::cout << "Greater than operator called" << std::endl;
 	return (this->value > cl.getRawBits());
 }
 
-bool 	Fixed::operator<( Fixed const & cl )
+bool 	Fixed::operator<( Fixed const & cl ) const
 {
 	std::cout << "Less than operator called" << std::endl;
 	return (this->value < cl.getRawBits());
-}
+} 
 
-bool 	Fixed::operator<=( Fixed const & cl )
+bool 	Fixed::operator<=( Fixed const & cl ) const
 {
 std::cout << "Less or equal operator called" << std::endl;
 return (this->value <= cl.getRawBits());
 }
 
-bool 	Fixed::operator>=( Fixed const & cl )
+bool 	Fixed::operator>=( Fixed const & cl ) const
 {
 	std::cout << "Greater or equal operator called" << std::endl;
 	return (this->value >= cl.getRawBits());
 }
 
-bool 	Fixed::operator==( Fixed const & cl )
+bool 	Fixed::operator==( Fixed const & cl ) const
 {
 	std::cout << "Equal operator called" << std::endl;
 	return (this->value == cl.getRawBits());
 }
 
-bool 	Fixed::operator!=( Fixed const & cl )
+bool 	Fixed::operator!=( Fixed const & cl ) const
 {
 	std::cout << "Not equal operator called" << std::endl;
 	return (this->value != cl.getRawBits());
 }
+
+Fixed & Fixed::operator++( void )
+{
+	this->value++;
+	return *this;
+}
+
+Fixed Fixed::operator++( int )
+{
+	Fixed temp(*this);
+
+	operator++();
+	return temp;
+}
+
+Fixed & Fixed::operator--( void )
+{
+	--this->value;
+	return *this;
+}
+
+Fixed Fixed::operator--( int )
+{
+	Fixed temp(*this);
+
+	operator--();
+	return temp;
+}
+
+Fixed &	Fixed::min( Fixed & a, Fixed & b )
+{
+	if (a < b)
+		return a;
+	return b;
+}
+
+Fixed const &	Fixed::min( Fixed const & a, Fixed const & b )
+{
+	if (a < b)
+		return a;
+	return b;
+}
+
+Fixed &	Fixed::max( Fixed & a, Fixed & b )
+{
+	if (a > b)
+		return a;
+	return b;
+}
+
+Fixed const &	Fixed::max( Fixed const & a, Fixed const & b )
+{
+	if (a > b)
+		return a;
+	return b;
+}
+
 
 int	Fixed::getRawBits( void ) const
 {
@@ -125,18 +181,7 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	int		sign = 1;
-	float	temp = this->value;
-	float	ret = 0.0;
-
-	if (this->value < 0)
-	{
-		sign = - 1;
-		temp = this->value - 1;
-	}
-	ret = (1.0 * temp) / (256);
-	ret = ret * sign;
-	return ret;
+	return (float)this->value / (1 << this->fraction_bits);
 }
 
 int	Fixed::toInt( void ) const
