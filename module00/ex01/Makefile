@@ -6,11 +6,11 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
-#    Updated: 2024/07/29 16:01:50 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/01 12:38:11 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = Fixed
 
 FLAGS = -Wall -Wextra -Werror -g -std=c++11
 
