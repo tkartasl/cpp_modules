@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:10:41 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/05 10:29:11 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/05 13:32:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main( void )
 	Point const p( Point( 10.0f, 15.0f ) );
 	Point const p1( Point( 30.0f, 15.0f ) );
 	Point const p2( Point( 15.0f, 15.0f ) );
-	
+
 	if (bsp( a, b, c, p ) == true)
 		std::cout << "Point is inside the triangle" << std::endl;
 	else

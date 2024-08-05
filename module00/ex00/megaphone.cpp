@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 11:27:52 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/24 11:46:58 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:26:47 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		i++;
 	}
 	i = 0;
-	while (input_str[i] != 0)
+	while (input_str.c_str()[i] != 0)
 	{
 		input_str[i] = toupper(input_str[i]);
 		i++;

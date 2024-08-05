@@ -6,29 +6,32 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
-#    Updated: 2024/07/25 13:13:25 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/05 12:18:36 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
+FLAGS = -Wall -Wextra -Werror -g -std=c++11
+
 SRCS = megaphone.cpp
 
-CPP_FLAGS = c++ -Wall -Wextra -Werror -std=c++11
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	c++ $(FLAGS) -o $@ $^
 
 %.o: %.cpp
-
-all: ${NAME}
-
-${NAME}: ${OBJS}
-
-${OBJS}: ${SRCS}
-	${CPP_FLAGS} -c ${SRCS} -o ${NAME}
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f ${OBJS}
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
-re: fclean all%        
+re: fclean all
+
+.PHONY: all clean fclean re
