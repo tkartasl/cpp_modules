@@ -6,24 +6,23 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:43:49 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/02 15:51:17 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/05 10:13:31 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point( void ) : x(0), y (0)
+Point::Point( void ) : x(0), y(0)
 {
 	return;	
 }
 
-Point::Point ( Point const & src )
+Point::Point ( Point const & src ) : x(src.x), y(src.y)
 {
-	this->operator=( src );
 	return;
 }
 
-Point::Point( float const a, float const b ) : x(a), y(b)
+Point::Point( float const a, float const b ) : x(Fixed(a)), y(Fixed(b))
 {
 	return;	
 }

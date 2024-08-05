@@ -6,28 +6,32 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:45:34 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/02 16:02:34 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/05 10:28:31 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-float	calculateArea(float x1, float y1, float x2, float y2, float x3, float y3)
+float	calculateArea(int x1, int y1, int x2, int y2, int x3, int y3)
 {
-	return ((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
+	float	res;
+	res = roundf((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
+	if (res < 0)
+		res *= -1;
+	return res;
 }
 
-bool	bsp( Point const a, Point const b, Point const c, Point const p)
+bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	float area = 0.0;
 	float area1 = 0.0;
 	float area2 = 0.0;
 	float area3 = 0.0;
-	
-	area = calculateArea(a.getX().toFloat(), a.getY().toFloat(), b.getX().toFloat(), b.getY().toFloat(), c.getX().toFloat(), c.getY().toFloat());
-	area = calculateArea(p.getX().toFloat(), p.getY().toFloat(), b.getX().toFloat(), b.getY().toFloat(), c.getX().toFloat(), c.getY().toFloat());
-	area = calculateArea(a.getX().toFloat(), a.getY().toFloat(), p.getX().toFloat(), p.getY().toFloat(), c.getX().toFloat(), c.getY().toFloat());
-	area = calculateArea(a.getX().toFloat(), a.getY().toFloat(), b.getX().toFloat(), b.getY().toFloat(), p.getX().toFloat(), p.getY().toFloat());
+
+	area = calculateArea(a.getX().toInt(), a.getY().toInt(), b.getX().toInt(), b.getY().toInt(), c.getX().toInt(), c.getY().toInt());
+	area1 = calculateArea(point.getX().toInt(), point.getY().toInt(), b.getX().toInt(), b.getY().toInt(), c.getX().toInt(), c.getY().toInt());
+	area2 = calculateArea(a.getX().toInt(), a.getY().toInt(), point.getX().toInt(), point.getY().toInt(), c.getX().toInt(), c.getY().toInt());
+	area3 = calculateArea(a.getX().toInt(), a.getY().toInt(), b.getX().toInt(), b.getY().toInt(), point.getX().toInt(), point.getY().toInt());
 	return (area == (area1 + area2 + area3));
 }
