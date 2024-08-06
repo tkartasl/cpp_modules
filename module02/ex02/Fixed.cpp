@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: tomppa <tomppa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:11:12 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/02 14:02:54 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/06 13:14:33 by tomppa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ Fixed::~Fixed( void )
 	return;
 }
 
-Fixed::Fixed( Fixed const & src )
+Fixed::Fixed( Fixed const & src ) : value(src.value), fraction_bits(src.fraction_bits)
 {
-	this->operator=(src);
 	return;
 }
 
