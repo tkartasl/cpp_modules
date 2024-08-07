@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:57 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/06 15:10:32 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:11:05 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,46 +47,6 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &src)
 	return *this;
 }
 
-std::string		ClapTrap::getName(void) const
-{
-	return	this->_name;
-}
-
-int		ClapTrap::getHitPoints(void) const
-{
-	return this->_hitPoints;
-}
-
-int		ClapTrap::getAttackDamage(void) const
-{
-	return this->_attackDamage;
-}
-
-int		ClapTrap::getEnergyPoints(void) const
-{
-	return this->_energyPoints;
-}
-
-void	ClapTrap::setName(std::string newName)
-{
-	this->_name = newName;
-}
-
-void	ClapTrap::setHitPoints(int value)
-{
-	this->_hitPoints = value;
-}
-
-void	ClapTrap::setAttackDamage(int value)
-{
-	this->_attackDamage = value;
-}
-
-void	ClapTrap::setEnergyPoints(int value)
-{
-	this->_energyPoints = value;
-}
-
 void ClapTrap::attack(const std::string& target)
 {	
 	if (this->_hitPoints <= 0)
@@ -113,6 +73,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{	
 		this->_energyPoints -= 1;
 		this->_hitPoints += amount;
-		std::cout << "ClapTrap " << this->_name << " is repairing himself" << std::endl; 	
+		std::cout << this->_name << " is repairing himself" << std::endl; 	
 	}
 }

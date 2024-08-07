@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 12:56:09 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/30 13:11:39 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:21:14 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,26 @@ Contact::~Contact(void)
 
 void Contact::SetFirstName(std::string input)
 {
-	input.erase(std::remove_if(input.begin(), input.end(), :: isspace), input.end());
 	this->_FirstName = input;
 }
 
 void Contact::SetLastName(std::string input)
 {
-	input.erase(std::remove_if(input.begin(), input.end(), :: isspace), input.end());
 	this->_LastName = input;
 }
 
 void Contact::SetNickName(std::string input)
 {
-	input.erase(std::remove_if(input.begin(), input.end(), :: isspace), input.end());
 	this->_NickName = input;
 }
 
 void Contact::SetPhoneNumber(std::string input)
 {
-	input.erase(std::remove_if(input.begin(), input.end(), :: isspace), input.end());
 	this->_PhoneNumber = input;
 }
 
 void Contact::SetDarkestSecret(std::string input)
 {
-	input.erase(std::remove_if(input.begin(), input.end(), :: isspace), input.end());
 	this->_DarkestSecret = input;
 }
 

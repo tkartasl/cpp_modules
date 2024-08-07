@@ -6,14 +6,13 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:07:33 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/06 13:51:41 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:20:10 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
-#include <chrono>
 #include <iomanip>
 
 int Account::_nbAccounts = 0;
@@ -25,7 +24,7 @@ Account::Account( int initial_deposit ) : _amount(initial_deposit), _nbDeposits(
 {
 	this->_accountIndex = this->_nbAccounts;
 	this->_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << "amount:" << this->_amount << ";created" << std::endl;
+	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
 	this->_nbAccounts++;
 	this->_totalAmount += initial_deposit;
 	return;
@@ -117,8 +116,11 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-std::time_t tt = std::chrono::system_clock::to_time_t (std::chrono::system_clock::now());
-struct std::tm * ptm = std::localtime(&tt);
-
-std::cout << "[" << std::put_time( ptm,"%G%m%d" ) << "_" << std::put_time( ptm,"%H%M%S") << "] ";
+	std::time_t time = std::time(NULL);
+	std::tm* local_time = std::localtime(&time);
+	
+	std::cout << "[" << local_time->tm_year + 1900;
+	std::cout << std::setfill('0') << std::setw(2) << local_time->tm_mon + 1;
+	std::cout << std::setfill('0') << std::setw(2) << local_time->tm_mday << "_";
+	std::cout << local_time->tm_hour << local_time->tm_min << local_time->tm_sec << "] ";
 }

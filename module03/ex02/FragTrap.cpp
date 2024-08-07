@@ -6,60 +6,70 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:43:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/06 15:57:54 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:15:36 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string& name)
+FragTrap::FragTrap(void) : ClapTrap()
 {
+	this->_name = ("");
+	this->_hitPoints = 100;
+	this->_attackDamage = 30;
+	this->_energyPoints = 100;
 	std::cout << "FragTrap's Constructor called" << std::endl;
-	setName(name);
-	setHitPoints(100);
-	setAttackDamage(30);
-	setEnergyPoints(100);
 	return;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
-	setName(src.getName());
-	setHitPoints(src.getEnergyPoints());
-	setAttackDamage(src.getAttackDamage());
-	setEnergyPoints(src.getEnergyPoints());
+	std::cout << "FragTrap's " << name << " Constructor called" << std::endl;
+	this->_name = (name);
+	this->_hitPoints = 100;
+	this->_attackDamage = 30;
+	this->_energyPoints = 100;
+	return;
+}
+
+FragTrap::FragTrap(FragTrap const& src)
+{
+	this->_name = src._name;
+	this->_hitPoints = src._hitPoints;
+	this->_attackDamage = src._attackDamage;
+	this->_energyPoints = src._energyPoints;
 	return;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap's Destructor called" << std::endl;
+	std::cout << "FragTrap's " << this->_name << " Destructor called" << std::endl;
 	return;
 }
 
-FragTrap & FragTrap::operator=(FragTrap const & src)
+FragTrap& FragTrap::operator=(FragTrap const& src)
 {
 	if (this != &src)
 	{
-		setName(src.getName());
-		setHitPoints(src.getEnergyPoints());
-		setAttackDamage(src.getAttackDamage());
-		setEnergyPoints(src.getEnergyPoints());
+		this->_name = src._name;
+		this->_hitPoints = src._hitPoints;
+		this->_attackDamage = src._attackDamage;
+		this->_energyPoints = src._energyPoints;
 	}
 	return *this;
 }
 
 void FragTrap::attack(const std::string& target)
 {	
-	if (getHitPoints() <= 0)
+	if (this->_hitPoints <= 0)
 		std::cout << "Out of Hitpoints" << std::endl;
-	else if (getEnergyPoints() == 0)
+	else if (this->_energyPoints == 0)
 		std::cout << "Not enough Energypoints to attack" << std::endl;
 	else
-		std::cout << "FragTrap " << getName() <<  " attacks " << target << " causing " <<  getAttackDamage() << " Points of damage" << std::endl;
+		std::cout << "FragTrap " << this->_name <<  " attacks " << target << " causing " <<  this->_attackDamage << " Points of damage" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << getName() << " smiles and asks everyone for epic high fives" << std::endl;
+	std::cout << "FragTrap " << this->_name << " smiles and asks everyone for epic high fives" << std::endl;
 }

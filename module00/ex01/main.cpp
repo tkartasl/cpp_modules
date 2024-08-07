@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 09:33:18 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/26 14:03:18 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:43:08 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Enter a command (ADD/SEARCH/EXIT): ";		
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+			break;
 		if (command == "ADD")
-			phonebook.AddContact();
+			phonebook.addContact();
 		else if (command == "SEARCH")
-			phonebook.SearchContact();
+			phonebook.searchContact();
 		else if (command == "EXIT")
 			break;
 	}

@@ -6,7 +6,7 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 09:11:35 by tkartasl          #+#    #+#              #
-#    Updated: 2024/08/06 15:59:17 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/07 13:17:02 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp
-
+		
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

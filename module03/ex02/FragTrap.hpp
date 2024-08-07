@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:42:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/06 15:56:27 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:15:23 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class FragTrap : public ClapTrap
 {
 public:
+	FragTrap(void);
 	FragTrap(const std::string& name);
 	FragTrap(FragTrap const & src);
 	~FragTrap(void);

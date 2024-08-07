@@ -6,60 +6,70 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:44:24 by tomppa            #+#    #+#             */
-/*   Updated: 2024/08/06 15:24:00 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:03:54 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string& name)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
+	this->_name = ("");
+	this->_hitPoints = 100;
+	this->_attackDamage = 20;
+	this->_energyPoints = 50;
 	std::cout << "ScavTrap's Constructor called" << std::endl;
-	setName(name);
-	setHitPoints(100);
-	setAttackDamage(20);
-	setEnergyPoints(50);
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	setName(src.getName());
-	setHitPoints(src.getEnergyPoints());
-	setAttackDamage(src.getAttackDamage());
-	setEnergyPoints(src.getEnergyPoints());
+	std::cout << "ScavTrap's " << name << " Constructor called" << std::endl;
+	this->_name = (name);
+	this->_hitPoints = 100;
+	this->_attackDamage = 20;
+	this->_energyPoints = 50;
+	return;
+}
+
+ScavTrap::ScavTrap(ScavTrap const& src)
+{
+	this->_name = src._name;
+	this->_hitPoints = src._hitPoints;
+	this->_attackDamage = src._attackDamage;
+	this->_energyPoints = src._energyPoints;
 	return;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap's Destructor called" << std::endl;
+	std::cout << "ScavTrap's " << this->_name << " Destructor called" << std::endl;
 	return;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & src)
+ScavTrap& ScavTrap::operator=(ScavTrap const& src)
 {
 	if (this != &src)
 	{
-		setName(src.getName());
-		setHitPoints(src.getEnergyPoints());
-		setAttackDamage(src.getAttackDamage());
-		setEnergyPoints(src.getEnergyPoints());
+		this->_name = src._name;
+		this->_hitPoints = src._hitPoints;
+		this->_attackDamage = src._attackDamage;
+		this->_energyPoints = src._energyPoints;
 	}
 	return *this;
 }
 
 void ScavTrap::attack(const std::string& target)
 {	
-	if (getHitPoints() <= 0)
+	if (this->_hitPoints <= 0)
 		std::cout << "Out of Hitpoints" << std::endl;
-	else if (getEnergyPoints() == 0)
+	else if (this->_energyPoints == 0)
 		std::cout << "Not enough Energypoints to attack" << std::endl;
 	else
-		std::cout << "ScavTrap " << getName() <<  " attacks " << target << " causing " <<  getAttackDamage() << " Points of damage" << std::endl;
+		std::cout << "ScavTrap " << this->_name <<  " attacks " << target << " causing " <<  this->_attackDamage << " Points of damage" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << getName() << " is now in Gatekeeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " is now in Gatekeeper mode" << std::endl;
 }

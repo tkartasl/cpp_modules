@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:57 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/06 15:10:32 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:10:54 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 ClapTrap::ClapTrap(void) : _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap's Constructor called" << std::endl;
 	return;	
 }
 
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap's " << name << " Constructor called" << std::endl;
 	return;	
 }
 
@@ -45,46 +45,6 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &src)
 		this->_energyPoints = src._energyPoints;
 	}
 	return *this;
-}
-
-std::string		ClapTrap::getName(void) const
-{
-	return	this->_name;
-}
-
-int		ClapTrap::getHitPoints(void) const
-{
-	return this->_hitPoints;
-}
-
-int		ClapTrap::getAttackDamage(void) const
-{
-	return this->_attackDamage;
-}
-
-int		ClapTrap::getEnergyPoints(void) const
-{
-	return this->_energyPoints;
-}
-
-void	ClapTrap::setName(std::string newName)
-{
-	this->_name = newName;
-}
-
-void	ClapTrap::setHitPoints(int value)
-{
-	this->_hitPoints = value;
-}
-
-void	ClapTrap::setAttackDamage(int value)
-{
-	this->_attackDamage = value;
-}
-
-void	ClapTrap::setEnergyPoints(int value)
-{
-	this->_energyPoints = value;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -113,6 +73,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{	
 		this->_energyPoints -= 1;
 		this->_hitPoints += amount;
-		std::cout << "ClapTrap " << this->_name << " is repairing himself" << std::endl; 	
+		std::cout << this->_name << " is repairing himself" << std::endl; 	
 	}
 }

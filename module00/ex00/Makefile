@@ -6,13 +6,13 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
-#    Updated: 2024/08/05 12:18:36 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/07 10:22:11 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-FLAGS = -Wall -Wextra -Werror -g -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = megaphone.cpp
 

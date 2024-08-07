@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:01:51 by tomppa            #+#    #+#             */
-/*   Updated: 2024/08/06 16:00:13 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:18:43 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@
 
 int main()
 {
-	ScavTrap pekka( ScavTrap("pekka"));
-	ScavTrap jorma( ScavTrap("jorma"));
-	FragTrap timo( FragTrap("timo"));
-	ClapTrap tomi( ClapTrap("tomi"));
-
-	timo.attack("pekka");
-	timo.highFivesGuys();
-	pekka.attack("timo");
+	ScavTrap pekka("pekka");
+	ScavTrap jorma("jorma");
+	FragTrap tomi("tomi");
+	
+	pekka.attack("tomi");
 	tomi.attack("pekka");
 	jorma.attack("pekka");
+	pekka.takeDamage(20);
 	pekka.beRepaired(42);
-	jorma.guardGate();
+	tomi.highFivesGuys();
 	return (0);
 }
