@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:43:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/07 13:15:36 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/12 10:46:02 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	this->_name = ("");
+	this->_name = "";
 	this->_hitPoints = 100;
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
@@ -34,6 +34,7 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 
 FragTrap::FragTrap(FragTrap const& src)
 {
+	std::cout << "FragTrap's copy constructor called" << std::endl;
 	this->_name = src._name;
 	this->_hitPoints = src._hitPoints;
 	this->_attackDamage = src._attackDamage;

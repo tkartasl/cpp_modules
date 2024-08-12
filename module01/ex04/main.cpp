@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:58:00 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/31 15:35:42 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:35:22 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int main(int argc, char *argv[])
 {
 	std::ifstream 	infile;
 	std::ofstream 	outfile;
-	std::string		filename;
-	std::string		filename2;
+	std::string 	filename;
 	std::string		str1;
 	std::string		str2;
 	std::string		buffer;
@@ -31,11 +30,10 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	filename = argv[1];
-	filename2 = filename + ".replace";
 	str1 = argv[2];
 	str2 = argv[3];
 	infile.open(filename);
-	outfile.open(filename2);
+	outfile.open(filename + ".replace");
 	if (infile.is_open() && outfile.is_open())
 	{
 		while (std::getline(infile, buffer))
@@ -49,12 +47,15 @@ int main(int argc, char *argv[])
 					buffer.insert(pos, str2);	
 				}
 			}
-			outfile << buffer;
+			pos = 0;
+			outfile << buffer << std::endl;
 		}
 	}
 	else
 		std::cout << "Error while opening file" << std::endl;
-	infile.close();
-	outfile.close();
+	if (infile.is_open() == true)
+		infile.close();
+	if (outfile.is_open() == true)
+		outfile.close();
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:57 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/07 13:10:54 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/08 13:15:14 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _hitPoints(10), _attackDamage(0), _energyPoints(10)
+ClapTrap::ClapTrap(void) : _name(""), _hitPoints(10), _attackDamage(0), _energyPoints(10)
 {
 	std::cout << "ClapTrap's Constructor called" << std::endl;
 	return;	
@@ -26,6 +26,7 @@ ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoints(10), _atta
 
 ClapTrap::ClapTrap(ClapTrap const &src) : _name(src._name), _hitPoints(src._hitPoints), _attackDamage(src._attackDamage), _energyPoints(src._energyPoints)
 {
+	std::cout << "ClapTrap's copy constructor called" << std::endl;
 	return;	
 }
 
