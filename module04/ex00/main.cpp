@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:52:07 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/09 12:28:03 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:17:54 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,27 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	const Animal& cat = Cat();
+	const Animal& dog = Dog();
+	const Cat o = Cat();
+	const Dog d = Dog();
+	const Animal* PTRcat = &o;
+	const Animal* PTRdog = &d;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << "Animal j is a " << j->getType() << " " << std::endl;
+	std::cout << "Animal i is a " << i->getType() << " " << std::endl;
+	std::cout << "Animal meta is a " << meta->getType() << " " << std::endl;
+	std::cout << "Animal cat is a " << cat.getType() << " " << std::endl;
+	std::cout << "Animal dog is a " << dog.getType() << " " << std::endl;
+	std::cout << "Animal PTRcat is a " << PTRcat->getType() << " " << std::endl;
+	std::cout << "Animal PTRdog is a " << PTRdog->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	cat.makeSound();
+	dog.makeSound();
+	PTRcat->makeSound();
+	PTRdog->makeSound();
 	
 	delete j;
 	delete i;

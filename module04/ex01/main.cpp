@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 11:42:09 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:59:42 by tkartasl         ###   ########.fr       */
+/*   Created: 2024/08/09 11:52:07 by tkartasl          #+#    #+#             */
+/*   Updated: 2024/08/12 16:13:52 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
-# include "Animal.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-class Cat : virtual public Animal
+int main()
 {
-public:
-	Cat(void);
-	Cat(Cat const& src);
-	~Cat(void);
-	Cat& operator=(Cat const& src);
+	const Animal* meta[4] = {new Cat(), new Cat(), new Dog(), new Dog()};
 
-	void makeSound(void) const;
-};
+	std::cout << meta[0]->getType() << std::endl;
+	meta[0].setCatIdeas("I'm cute");
 
-#endif
+	for (int i = 0; i < 4; i++)
+	{
+		delete meta[i];
+	}
+	return (0);
+}

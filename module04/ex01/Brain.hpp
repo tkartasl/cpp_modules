@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 11:42:09 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:59:42 by tkartasl         ###   ########.fr       */
+/*   Created: 2024/08/12 12:19:17 by tkartasl          #+#    #+#             */
+/*   Updated: 2024/08/12 15:33:57 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
-# include "Animal.hpp"
+#ifndef BRAIN_H
+# define BRAIN_H
+# include <iostream>
 
-class Cat : virtual public Animal
+class Brain
 {
 public:
-	Cat(void);
-	Cat(Cat const& src);
-	~Cat(void);
-	Cat& operator=(Cat const& src);
-
-	void makeSound(void) const;
+	Brain(void);
+	Brain(Brain const& src);
+	virtual ~Brain(void);
+	Brain& operator=(Brain const& src);
+	void setIdeas(const std::string);
+	std::string* getIdeas(void);
+private:
+	std::string _ideas[100];
 };
 
 #endif
