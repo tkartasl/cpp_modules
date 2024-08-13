@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:58:00 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/08 12:35:22 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:15:09 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
 	std::string		str2;
 	std::string		buffer;
 	std::size_t		pos = 0;
-
 	if (argc != 4)
 	{
 		std::cout << "This program takes 3 arguments (filename, string1, string2)" << std::endl;
@@ -44,7 +43,8 @@ int main(int argc, char *argv[])
 				if (pos != std::string::npos)
 				{
 					buffer.erase(pos, str1.length());
-					buffer.insert(pos, str2);	
+					buffer.insert(pos, str2);
+					pos += str2.length();	
 				}
 			}
 			pos = 0;

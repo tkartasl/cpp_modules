@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:09:49 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:51:02 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:23:52 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 class WrongAnimal
 {
-public:
-	WrongAnimal(void);
-	WrongAnimal(WrongAnimal const& src);
-	virtual ~WrongAnimal(void);
-	WrongAnimal& operator=(WrongAnimal const &src);
+	public:
+		WrongAnimal(void);
+		WrongAnimal(WrongAnimal const& src);
+		virtual ~WrongAnimal(void);
+		WrongAnimal& operator=(WrongAnimal const &src);
 
-	std::string getType(void) const;
-	virtual void makeSound(void) const;
-protected:
-	std::string _type;
+		std::string getType(void) const;
+		virtual void makeSound(void) const;
+	protected:
+		std::string _type;
 };
 
 #endif

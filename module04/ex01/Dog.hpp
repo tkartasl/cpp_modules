@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:51:14 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 16:01:04 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:23:23 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@
 
 class Dog : virtual public Animal
 {
-public:
-	Dog(void);
-	Dog(Dog const& src);
-	~Dog(void);
-	Dog& operator=(Dog const& src);
+	public:
+		Dog(void);
+		Dog(Dog const& src);
+		~Dog(void);
+		Dog& operator=(Dog const& src);
 
-	std::string* getDogIdeas(void);
-	void	setDogIdeas(std::string dog_idea);
-	void	makeSound(void) const;
-private:
-	Brain* _brainPTR;
+		Brain*	getBrains(void) const;
+		void	makeSound(void) const;
+	private:
+		Brain* _brainPTR;
 };
 
 #endif

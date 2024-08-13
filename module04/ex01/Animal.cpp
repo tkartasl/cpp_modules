@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:32:54 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:50:48 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/13 12:31:46 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,5 @@ std::string Animal::getType(void) const
 void Animal::makeSound(void) const
 {
 	std::cout << "Generic animal sound" << std::endl;
-	if (this->_type == "Cat")
-		std::cout << "Miauuuuww" << std::endl;
-	if (this->_type == "Dog")
-		std::cout << "Wuf wuf" << std::endl;
 }
 	
