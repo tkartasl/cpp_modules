@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:40:30 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/29 14:37:57 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:19:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	void	setName( std::string name );
 	
 private:
-	std::string name;
+	std::string _name;
 };
 
 #endif 

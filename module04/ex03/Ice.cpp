@@ -6,11 +6,12 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:10:27 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 13:17:43 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:41:02 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include <iostream>
 
 Ice::Ice(void) : AMateria()
 {
@@ -30,5 +31,17 @@ Ice::~Ice(void)
 }
 Ice& Ice::operator=(const Ice& src)
 {
+	(void)src;
 	return *this;
+}
+
+void	Ice::use (ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+AMateria*	Ice::clone(void) const
+{
+	AMateria* newMateria = new Ice();
+	return newMateria;
 }

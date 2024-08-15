@@ -6,11 +6,11 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/30 10:42:37 by tkartasl          #+#    #+#              #
-#    Updated: 2024/07/30 14:52:49 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/14 10:30:24 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = UnnecessaryViolence
+NAME = unnecessaryViolence
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 

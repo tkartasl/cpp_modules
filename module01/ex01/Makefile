@@ -6,11 +6,11 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 00:00:00 by 6:49 by tka       #+#    #+#              #
-#    Updated: 2024/07/30 09:39:18 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/14 16:14:19 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = hordeofzombies
+NAME = hordeOfZombies
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 

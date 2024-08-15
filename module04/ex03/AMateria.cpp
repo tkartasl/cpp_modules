@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 12:51:59 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 13:02:05 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:31:00 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,16 @@ AMateria::~AMateria(void)
 }
 AMateria& AMateria::operator=(const AMateria& src)
 {
-	if (this != &src)
-		this->_type = src._type;
+	(void)src;
 	return *this;
 }
 std::string const& AMateria::getType(void) const
 {
 	return this->_type;
 }
-void AMateria::use(ICharacter& target)
+
+void	AMateria::use (ICharacter& target)
 {
-	
+	(void)target;
+	return;
 }

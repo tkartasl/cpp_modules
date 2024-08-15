@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:40:49 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/07/29 14:52:57 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:19:58 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ Zombie::Zombie( void )
 
 Zombie::~Zombie( void )
 {
-	std::cout << "zombie: " << this->name << " destroyed" << std::endl;
+	std::cout << "zombie: " << this->_name << " destroyed" << std::endl;
 	return;
 }
 
 void	Zombie::setName( std::string name )
 {
-	this->name = name;
+	this->_name = name;
 }
 
 void	Zombie::announce( void )
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

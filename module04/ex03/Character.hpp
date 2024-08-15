@@ -6,22 +6,33 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:21:25 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 15:18:30 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:24:41 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_H
 # define CHARACTER_H
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class ICharacter
+class Character : public ICharacter
 {
 	public:
-		virtual ~ICharacter(void) {}
-		virtual std::string const& getName(void) const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Character(void);
+		Character(std::string const name);
+		Character(const Character& src);
+		~Character(void);
+		Character& operator=(const Character& src);
+
+		virtual std::string const& getName(void) const;
+		virtual void	equip(AMateria* m);
+		virtual void	unequip(int idx);
+		virtual void	use(int idx, ICharacter& target);
+	private:
+		AMateria* _inventory[4];
+		AMateria* _trashBin[42];
+		std::string _name;
+		void	_addTrash(AMateria* m);
 };
 
 #endif

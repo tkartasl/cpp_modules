@@ -6,11 +6,11 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/30 14:52:00 by tkartasl          #+#    #+#              #
-#    Updated: 2024/07/30 14:53:14 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/14 10:36:58 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = SedIsForLosers
+NAME = sedIsForLosers
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 

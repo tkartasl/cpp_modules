@@ -6,11 +6,11 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/31 14:26:30 by tkartasl          #+#    #+#              #
-#    Updated: 2024/07/31 19:06:12 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/14 10:46:10 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl
+NAME = harl
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
