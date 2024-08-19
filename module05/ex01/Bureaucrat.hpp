@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:27:59 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/15 13:52:25 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/16 18:33:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define BUREAUCRAT_H
 # include <iostream>
 # include <exception>
+
+class Form;
 
 class Bureaucrat
 {
@@ -28,7 +30,8 @@ class Bureaucrat
 		int	getGrade(void) const;
 		void	improveGrade(void);
 		void	lowerGrade(void);
-
+		void	signForm(Form& f);
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -44,7 +47,6 @@ class Bureaucrat
 	private:
 		const std::string _name;
 		int	_grade;
-		std::string exception;
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const& b);
