@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:10:41 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/02 13:50:04 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/16 11:31:05 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main( void )
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
-	std::cout << "c value is " << c.getRawBits() << std::endl;
 	std::cout << "d is " << d << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;

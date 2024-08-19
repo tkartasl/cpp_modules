@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:10:59 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/01 12:31:58 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/16 10:48:12 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 class	Fixed
 {
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Fixed(void);
+	Fixed(Fixed const & src);
+	~Fixed(void);
 
-	Fixed &	operator=( Fixed const & cl );
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	Fixed &	operator=(Fixed const & cl);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 private:
-	int					value;
-	static const	int fraction_bits = 8;
+	int					_value;
+	static const	int _fraction_bits = 8;
 };
 
 #endif

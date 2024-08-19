@@ -6,13 +6,13 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 09:11:35 by tkartasl          #+#    #+#              #
-#    Updated: 2024/08/02 15:29:15 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/19 10:02:04 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = fixedPoint_bsp
 
-FLAGS = -Wall -Wextra -Werror -g -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \
 		Fixed.cpp \
@@ -24,10 +24,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(FLAGS) $^
+	c++ $(FLAGS) -o $@ $^
 
 %.o: %.cpp
-	c++ $(FLAGS) -c $<
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
