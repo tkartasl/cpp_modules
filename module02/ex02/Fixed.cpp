@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 09:11:12 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 11:41:50 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/19 12:13:38 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Fixed 	Fixed::operator+(Fixed const & cl) const
 
 Fixed 	Fixed::operator-(Fixed const & cl) const
 {
-	return Fixed(this->toFloat() + cl.toFloat());
+	return Fixed(this->toFloat() - cl.toFloat());
 }
 
 Fixed 	Fixed::operator*(Fixed const & cl) const
