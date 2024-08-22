@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 11:03:38 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/22 13:54:11 by tkartasl         ###   ########.fr       */
+/*   Created: 2024/08/22 14:38:03 by tkartasl          #+#    #+#             */
+/*   Updated: 2024/08/22 15:01:31 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConversion.hpp"
-#include <iostream>
+#include "Serializer.hpp"
 
-int main(int argc, char* argv[])
+uintptr_t serialize(Data* ptr)
+{	
+	return static_cast<uintptr_t>(ptr);	
+}
+
+Data* deserialize(uintptr_t raw)
 {
-	if (argc != 2)
-	{
-		std::cout << "Wrong amount of argmuents" << std::endl; 
-		return (1);
-	}
-	ScalarConversion::convert(argv[1]);
+	return static_cast<Data *>(raw);
 }

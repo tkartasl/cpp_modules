@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 11:03:38 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/22 13:54:11 by tkartasl         ###   ########.fr       */
+/*   Created: 2024/08/22 14:55:50 by tkartasl          #+#    #+#             */
+/*   Updated: 2024/08/22 14:58:24 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConversion.hpp"
+#include "Data.hpp"
 #include <iostream>
 
-int main(int argc, char* argv[])
+Data::Data(void)
 {
-	if (argc != 2)
-	{
-		std::cout << "Wrong amount of argmuents" << std::endl; 
-		return (1);
-	}
-	ScalarConversion::convert(argv[1]);
+	return;
+}
+
+Data::Data(Data const& src)
+{
+	(void)src;
+	return;
+}
+
+Data::~Data(void)
+{
+	return;
+}
+
+Data& Data::operator=(Data const& src)
+{
+	(void)src;
+	return *this;
+}
+
+void print(void)
+{
+	std::cout << "Hello world!!" << std::endl;
 }
