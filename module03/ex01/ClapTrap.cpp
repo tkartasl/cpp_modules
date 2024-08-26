@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:57 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/08 13:16:18 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/26 15:04:15 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoints(10), _atta
 	return;	
 }
 
-ClapTrap::ClapTrap(ClapTrap const &src) : _name(src._name), _hitPoints(src._hitPoints), _attackDamage(src._attackDamage), _energyPoints(src._energyPoints)
+ClapTrap::ClapTrap(ClapTrap const &src)
 {
+	this->_name = src._name;
+	this->_attackDamage = src._attackDamage;
+	this->_hitPoints = src._hitPoints;
+	this->_energyPoints = src._energyPoints;
 	std::cout << "ClapTrap's copy constructor called" << std::endl;
 	return;	
 }
@@ -60,8 +64,13 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << this->_name << " takes " << amount << " points of damage" << std::endl;
-	this->_hitPoints -= amount;
+	if (this->_hitPoints <= 0)
+		std::cout << "Out of Hitpoints" << std::endl;
+	else
+	{
+		std::cout << this->_name << " takes " << amount << " points of damage" << std::endl;
+		this->_hitPoints -= amount;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

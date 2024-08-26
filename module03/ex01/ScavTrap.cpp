@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 13:44:24 by tomppa            #+#    #+#             */
-/*   Updated: 2024/08/08 13:16:29 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:46:10 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->_name = ("");
+	this->_name = "";
 	this->_hitPoints = 100;
 	this->_attackDamage = 20;
 	this->_energyPoints = 50;
@@ -24,21 +24,16 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap's " << name << " Constructor called" << std::endl;
-	this->_name = (name);
 	this->_hitPoints = 100;
 	this->_attackDamage = 20;
 	this->_energyPoints = 50;
+	std::cout << "ScavTrap's " << name << " Constructor called" << std::endl;
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const& src)
+ScavTrap::ScavTrap(ScavTrap const& src) : ClapTrap(src)
 {
 	std::cout << "ScavTrap's copy constructor called" << std::endl;
-	this->_name = src._name;
-	this->_hitPoints = src._hitPoints;
-	this->_attackDamage = src._attackDamage;
-	this->_energyPoints = src._energyPoints;
 	return;
 }
 
@@ -52,10 +47,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& src)
 {
 	if (this != &src)
 	{
-		this->_name = src._name;
-		this->_hitPoints = src._hitPoints;
-		this->_attackDamage = src._attackDamage;
-		this->_energyPoints = src._energyPoints;
+		ClapTrap::operator=(src);
 	}
 	return *this;
 }
@@ -72,5 +64,8 @@ void ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->_name << " is now in Gatekeeper mode" << std::endl;
+	if (this->_hitPoints <= 0)
+		std::cout << "Out of Hitpoints" << std::endl;
+	else
+		std::cout << "ScavTrap " << this->_name << " is now in Gatekeeper mode" << std::endl;
 }

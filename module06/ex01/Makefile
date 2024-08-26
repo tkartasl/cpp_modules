@@ -6,16 +6,17 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 09:11:35 by tkartasl          #+#    #+#              #
-#    Updated: 2024/08/21 11:06:32 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/08/26 10:33:29 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = serializer
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \
-		ScalarConversion.cpp
+		Serializer.cpp \
+		Data.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 

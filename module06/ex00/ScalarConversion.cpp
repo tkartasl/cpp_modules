@@ -36,15 +36,6 @@ int	detectType(std::string string)
 void toFloat(std::string string)
 {
 	float f = 0;
-	if (string == "-inff" || string == "inff" || string == "nanf")
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << string << std::endl;
-		string.pop_back();
-		std::cout << "double: " << string << std::endl;
-		return;
-	}
 
 	try
 	{
@@ -55,7 +46,14 @@ void toFloat(std::string string)
 		std::cout << "type conversion is impossible" << std::endl;
 		return;
 	}
-
+	if (string == "-inff" || string == "inff" || string == "nanf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << f << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(f) << std::endl;
+		return;
+	}
 	if (f < 32 || f > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
@@ -73,14 +71,6 @@ void toFloat(std::string string)
 void toDouble(std::string string)
 {
 	double d = 0;
-	if (string == "-inf" || string == "inf" || string == "nan")
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << (string + "f") << std::endl;
-		std::cout << "double: " << string << std::endl;
-		return;
-	}
 
 	try
 	{
@@ -89,6 +79,14 @@ void toDouble(std::string string)
 	catch(const std::exception& e)
 	{
 		std::cout << "type conversion is impossible" << std::endl;
+		return;
+	}
+	if (string == "-inf" || string == "inf" || string == "nan")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+		std::cout << "double: " << d << std::endl;
 		return;
 	}
 	if (d < 32 || d > 126)

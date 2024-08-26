@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 14:55:50 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/22 14:58:24 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:35:28 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Data& Data::operator=(Data const& src)
 	return *this;
 }
 
-void print(void)
+void Data::print(void)
 {
 	std::cout << "Hello world!!" << std::endl;
 }
