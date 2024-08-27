@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:57 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/08 13:17:23 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 15:19:20 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(ClapTrap const &src) : _name(src._name), _hitPoints(src._hitP
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap's Destructor called" << std::endl;
 	return;	
 }
 
@@ -55,7 +55,10 @@ void ClapTrap::attack(const std::string& target)
 	else if (this->_energyPoints == 0)
 		std::cout << "Not enough Energypoints to attack" << std::endl;
 	else
+	{
 		std::cout << "ClapTrap " << this->_name <<  " attacks " << target << " causing " <<  this->_attackDamage << " Points of damage" << std::endl;
+		this->_energyPoints -= 1;
+	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

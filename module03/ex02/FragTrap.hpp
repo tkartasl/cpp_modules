@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:42:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/07 13:15:23 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 15:08:33 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ public:
 	FragTrap(FragTrap const & src);
 	~FragTrap(void);
 	FragTrap & operator=( FragTrap const & src );
-	
-	void	attack(const std::string& target);
+
 	void	highFivesGuys(void);
 };
 

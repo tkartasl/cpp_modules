@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:22:39 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/07 13:01:33 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 14:49:06 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ public:
 	ClapTrap(ClapTrap const &src);
 	~ClapTrap(void);
 	ClapTrap & operator=(ClapTrap const &src);
-	
+
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	
-protected:
+private:
 	std::string _name;
 	int			_hitPoints;
 	int			_attackDamage;

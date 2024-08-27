@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:43:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/26 14:44:07 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 15:26:13 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 FragTrap::FragTrap(void) : ClapTrap("")
 {
+	this->_hitPoints = 100;
+	this->_attackDamage = 30;
+	this->_energyPoints = 100;
 	std::cout << "FragTrap's Constructor called" << std::endl;
 	return;
 }
@@ -46,16 +49,6 @@ FragTrap& FragTrap::operator=(FragTrap const& src)
 		ClapTrap::operator=(src);
 	}
 	return *this;
-}
-
-void FragTrap::attack(const std::string& target)
-{	
-	if (this->_hitPoints <= 0)
-		std::cout << "Out of Hitpoints" << std::endl;
-	else if (this->_energyPoints == 0)
-		std::cout << "Not enough Energypoints to attack" << std::endl;
-	else
-		std::cout << "FragTrap " << this->_name <<  " attacks " << target << " causing " <<  this->_attackDamage << " Points of damage" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
