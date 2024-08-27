@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:49:32 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:58:32 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 09:57:15 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ Dog::Dog(void) : Animal()
 	return;
 }
 
-Dog::Dog(Dog const& src)
+Dog::Dog(Dog const& src) : Animal(src)
 {
 	std::cout << "Dog's copy constructor called" << std::endl;
-	this->_type = src._type;
 	return;
 }
 
@@ -35,7 +34,7 @@ Dog::~Dog(void)
 Dog& Dog::operator=(Dog const& src)
 {
 	if (this != &src)
-		this->_type = src._type;
+		Animal::operator=(src);
 	return *this;
 }
 

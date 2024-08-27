@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:45:21 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:58:25 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 09:56:44 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ Cat::Cat(void) : Animal()
 	return;
 }
 
-Cat::Cat(Cat const& src)
+Cat::Cat(Cat const& src) : Animal(src)
 {
 	std::cout << "Cat's constructor called" << std::endl;
-	this->_type = src._type;
 	return;
 }
 
@@ -35,7 +34,7 @@ Cat::~Cat(void)
 Cat& Cat::operator=(Cat const& src)
 {
 	if (this != &src)
-		this->_type = src._type;
+		Animal::operator=(src);
 	return *this;
 }
 

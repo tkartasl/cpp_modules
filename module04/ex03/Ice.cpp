@@ -6,22 +6,21 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:10:27 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/14 16:41:02 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:24:46 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include <iostream>
 
-Ice::Ice(void) : AMateria()
+Ice::Ice(void) : AMateria("ice")
 {
 	this->_type = "ice";
 	return;	
 }
 
-Ice::Ice(const Ice& src)
+Ice::Ice(const Ice& src) : AMateria(src)
 {
-	this->_type  = src._type;
 	return;
 }
 
@@ -31,7 +30,11 @@ Ice::~Ice(void)
 }
 Ice& Ice::operator=(const Ice& src)
 {
-	(void)src;
+	if (this != &src)
+	{
+		AMateria::operator=(src);
+		*this = src;
+	}
 	return *this;
 }
 

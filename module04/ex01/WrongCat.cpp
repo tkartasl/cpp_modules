@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:16:46 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 11:58:58 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:02:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ WrongCat::WrongCat(void) : WrongAnimal()
 	return;
 }
 
-WrongCat::WrongCat(WrongCat const& src) 
+WrongCat::WrongCat(WrongCat const& src) : WrongAnimal(src)
 {
 	std::cout << "WrongCat's copy constructor called" << std::endl;
-	this->_type = src._type;
 	return;
 }
 
@@ -36,7 +35,7 @@ WrongCat::~WrongCat(void)
 WrongCat& WrongCat::operator=(WrongCat const& src)
 {
 	if (this != &src)
-		this->_type = src._type;
+		WrongAnimal::operator=(src);
 	return *this;
 }
 

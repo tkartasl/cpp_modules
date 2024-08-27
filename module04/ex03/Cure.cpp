@@ -6,22 +6,21 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:18:10 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/14 16:39:41 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:26:20 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include <iostream>
 
-Cure::Cure(void) : AMateria()
+Cure::Cure(void) : AMateria("cure")
 {
 	this->_type = "cure";
 	return;	
 }
 
-Cure::Cure(const Cure& src)
+Cure::Cure(const Cure& src) : AMateria(src)
 {
-	this->_type  = src._type;
 	return;
 }
 
@@ -31,7 +30,11 @@ Cure::~Cure(void)
 }
 Cure& Cure::operator=(const Cure& src)
 {
-	(void)src;
+	if (this != &src)
+	{
+		AMateria::operator=(src);
+		*this = src;
+	}
 	return *this;
 }
 

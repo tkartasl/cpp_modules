@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 14:47:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 12:11:50 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:09:19 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain(void)
 	
 Brain::Brain(Brain const& src)
 {
-	for (int i = 0; i < 99; i++)
+	for (int i = 0; i < 100; i++)
 	{
 		this->_ideas[i] = src._ideas[i];
 	}
@@ -33,7 +33,7 @@ Brain& Brain::operator=(Brain const& src)
 {
 	if (this != &src)
 	{
-		for (int i = 0; i < 99; i++)
+		for (int i = 0; i < 100; i++)
 		{
 			this->_ideas[i] = src._ideas[i];
 		}
