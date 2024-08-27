@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:21:04 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 19:11:21 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:37:35 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRe
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& src)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& src) : AForm(src)
 {
-	this->_target = src._target;
 	return;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& src)
 {
 	if (this != &src)
-		this->_target = src._target;
+		AForm::operator=(src);
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:52:31 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 19:43:38 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:39:48 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubb
 	return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src) : AForm(src)
 {
-	this->_target = src._target;
 	return;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& src)
 {
 	if (this != &src)
-		this->_target = src._target;
+		AForm::operator=(src);
 	return *this;
 }
 

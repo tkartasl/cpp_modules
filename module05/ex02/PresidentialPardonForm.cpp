@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:38:56 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 19:10:34 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:36:33 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& src)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& src) : AForm(src)
 {
-	this->_target = src._target;
 	return;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const& src)
 {
 	if (this != &src)
-		this->_target = src._target;
+		AForm::operator=(src);
 	return *this;
 }
 

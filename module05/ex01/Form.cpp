@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:26:19 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 18:41:34 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/27 10:43:17 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form(const char* n, const int ts, const int te) : _name(n), _signed(false)
 {
 	if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
 		throw Form::GradeTooHighException();
-		if (this->_grade_to_sign > 150 || this->_grade_to_execute > 150)
+	if (this->_grade_to_sign > 150 || this->_grade_to_execute > 150)
 		throw Form::GradeTooLowException();
 	return;
 }
