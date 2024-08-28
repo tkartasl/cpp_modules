@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 14:47:23 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 10:09:40 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:36:47 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 Brain::Brain(void)
 {
+	std::cout << "Brain's constructor called" << std::endl;
 	return;
 }
 	
 Brain::Brain(Brain const& src)
 {
+	std::cout << "Brain's copy constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		this->_ideas[i] = src._ideas[i];
@@ -27,6 +29,7 @@ Brain::Brain(Brain const& src)
 
 Brain::~Brain(void)
 {
+	std::cout << "Brain's destructor called" << std::endl;
 	return;
 }
 Brain& Brain::operator=(Brain const& src)

@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:11:36 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/09 12:28:21 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:26:55 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,5 @@ std::string WrongAnimal::getType(void) const
 }
 void WrongAnimal::makeSound(void) const
 {
-	if (this->_type == "WrongAnimal")
-		std::cout << "Generic wronganimal sound" << std::endl;
-	if (this->_type == "WrongCat")
-		std::cout << "Wrong Miauuuuww" << std::endl;
-	if (this->_type == "Dog")
-		std::cout << "Wuf wuf" << std::endl;
+	std::cout << "Generic wronganimal sound" << std::endl;
 }

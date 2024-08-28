@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:17:05 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 13:22:52 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:29:53 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define WRONGCAT_H
 # include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat(void);
@@ -22,7 +22,7 @@ class WrongCat : virtual public WrongAnimal
 		~WrongCat(void);
 		WrongCat& operator=(WrongCat const& src);
 
-		void makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

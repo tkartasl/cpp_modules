@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:09:49 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 13:23:52 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:33:05 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 		WrongAnimal& operator=(WrongAnimal const &src);
 
 		std::string getType(void) const;
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 	protected:
 		std::string _type;
 };

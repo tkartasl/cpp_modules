@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:52:07 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/12 12:17:54 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:40:27 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	const WrongAnimal* w = new WrongCat();
 	const Animal& cat = Cat();
 	const Animal& dog = Dog();
 	const Cat o = Cat();
@@ -42,9 +43,11 @@ int main()
 	dog.makeSound();
 	PTRcat->makeSound();
 	PTRdog->makeSound();
-	
+	w->makeSound();
+		
 	delete j;
 	delete i;
+	delete w;
 	delete meta;
 	return (0);
 }

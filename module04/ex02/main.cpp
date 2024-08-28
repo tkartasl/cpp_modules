@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:52:07 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 10:19:03 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:31:19 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ int main()
 		const Animal* j = new Dog();
 		//const Animal  a = Animal();
 		const Animal* meta[4] = {new Cat(), new Cat(), new Dog(), new Dog()};
-		
+		const WrongAnimal* wrong = new WrongCat();
 		const Cat c = Cat();
 		const Dog d = Dog();
 		const Dog copy = Dog(d);
 		delete i;
 		delete j;
 
+		wrong->makeSound();
+		delete wrong;
 		d.getBrains()->setIdeas("I want a bone");
 		d.getBrains()->setIdeas("Why I have four legs??");
 		d.getBrains()->setIdeas("I wanna go outside and play with other dogs");

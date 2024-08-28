@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 12:17:05 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/13 13:23:17 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:35:36 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define WRONGCAT_H
 # include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat(void);
