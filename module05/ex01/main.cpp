@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:39:50 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 14:08:49 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:37:19 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	Bureaucrat b("Pekka", 50);
 	Form f("complain", 50, 50);
 	Form f1("Autograph", 1, 1);
+	b.signForm(f1);
 	try
 	{
 		std::cout << f << std::endl;
@@ -25,7 +26,7 @@ int main()
 		b.signForm(f);
 		std::cout << "Is the form signed? 1 if true, 0 if false: " << f.isSigned() << std::endl;
 		b.lowerGrade();
-		std::cout << b<< std::endl;
+		std::cout << b << std::endl;
 		b.signForm(f1);
 		std::cout << "Is the form signed? 1 if true, 0 if false: " << f.isSigned() << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:44:14 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/16 19:25:41 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:42:08 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,15 @@ void	Bureaucrat::lowerGrade(void)
 
 void	Bureaucrat::signForm(AForm& f)
 {
-	if (this->_grade <= f.getGradeToSign())
+	try
 	{
-		std::cout << this->_name << " signed " << f.getName() << std::endl;	
 		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;	
 	}
-	else
+	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << this->_name << " couldn't sign ";
-		std::cout << f.getName() << " because ";
-		f.beSigned(*this); 
+		std::cout << f.getName() << " because " << e.what() << std::endl;
 	}
 }
 
@@ -90,7 +89,7 @@ void	Bureaucrat::executeForm(AForm const& form) const
 		form.execute(*this);
 		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
-	catch (std::exception& e)
+	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << this->_name << " was not able to execute " << form.getName();
 		std::cout << " because " << e.what() << std::endl;
