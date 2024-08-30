@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 14:30:10 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/14 17:46:55 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/08/30 10:19:15 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ void Character::equip(AMateria* m)
 {
 	int	i = 0;
 	
+	if (m == nullptr)
+		return;
 	while (i < 4 && this->_inventory[i] != 0)
 	{
 		if (this->_inventory[i] == m)
