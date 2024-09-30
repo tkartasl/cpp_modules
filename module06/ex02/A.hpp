@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 10:43:30 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 10:58:43 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:56:37 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 
 class A : public Base
 {
-	public:
-		A(void);
-		~A(void);	
 };
 
 #endif

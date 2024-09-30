@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 10:47:19 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 10:58:06 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:56:40 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 # include "Base.hpp"
 
 class B : public Base
-{
-	public:
-		B(void);
-		~B(void);	
+{	
 };
 
 #endif

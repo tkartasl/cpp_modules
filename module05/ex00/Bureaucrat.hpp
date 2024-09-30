@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:27:59 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/29 13:16:54 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 09:50:04 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Bureaucrat
 		int		getGrade(void) const;
 		void	improveGrade(void);
 		void	lowerGrade(void);
-		void	signForm(Form const& f);
 		
 		class GradeTooHighException : public std::exception
 		{

@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 12:24:20 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/19 14:08:41 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:19:44 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 {
 	const char*	forms[4] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm", "none"};
 	int	i = 0;
-	AForm* form = 0;
+	AForm* form = nullptr;
 
-	while (i < 4)
+	while (i < 3)
 	{
 		if (name == forms[i])
 			break;
@@ -51,7 +51,7 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 	}
 	switch(i)
 	{
-		case 0:
+		case 0: 
 			form = new ShrubberyCreationForm(target);
 			break;
 		case 1:
@@ -62,6 +62,8 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 			break;
 		case 3:
 			std::cout << name << " form doesn't exist" << std::endl;
+			return form;
 	}
+	std::cout << "Intern signed " << form->getName() << std::endl;
 	return form;
 }

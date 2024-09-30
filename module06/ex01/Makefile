@@ -6,7 +6,7 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 09:11:35 by tkartasl          #+#    #+#              #
-#    Updated: 2024/08/26 10:33:29 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/09/30 13:51:26 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ NAME = serializer
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \
-		Serializer.cpp \
-		Data.cpp
+		Serializer.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 

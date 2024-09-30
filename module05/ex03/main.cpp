@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:39:50 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/19 14:09:45 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 10:22:34 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main()
 	AForm* s = someRandomIntern.makeForm("ShrubberyCreationForm","42");
 	AForm* r = someRandomIntern.makeForm("RobotomyRequestForm", "hive");
 	AForm* p = someRandomIntern.makeForm("PresidentialPardonForm", "Mickey Mouse");
+	someRandomIntern.makeForm("abcForm","42");
 	Bureaucrat b("Jerry", 72);
 
 	std::cout << *s << std::endl;

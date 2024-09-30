@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:53:54 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 13:28:13 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:19:02 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ Base* generate(void)
 	switch (nbr)
 	{
 		case 1:
+			std::cout << "Generated A" << std::endl;
 			return new A();
-		case 2:	
+		case 2:
+			std::cout << "Generated B" << std::endl;
 			return new B();
 		case 3:
+			std::cout << "Generated C" << std::endl;
 			return new C();
 	}
 	return nullptr;	

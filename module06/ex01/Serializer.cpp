@@ -6,11 +6,20 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 14:38:03 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/26 10:35:50 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:13:26 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+Serializer::Serializer(void) {}
+Serializer::Serializer(Serializer const&) {}
+Serializer::~Serializer(void) {}
+Serializer& Serializer::operator=(Serializer const& src)
+{
+	(void)src;
+	return *this;
+}
 
 uintptr_t Serializer::serialize(Data* ptr)
 {	

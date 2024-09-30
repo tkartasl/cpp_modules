@@ -6,18 +6,8 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:56:51 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/27 10:57:25 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:56:26 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "B.hpp"
-
-B::B(void) : Base()
-{
-	return;
-}
-
-B::~B(void)
-{
-	return;	
-}

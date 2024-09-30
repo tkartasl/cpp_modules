@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 14:31:26 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/08/22 14:37:12 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:09:49 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define SERIALIZER_H
 # include <cstdint>
 
-class Data;
+struct Data
+{
+	int i;
+};
 
 class Serializer
 {

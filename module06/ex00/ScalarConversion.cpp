@@ -15,9 +15,35 @@
 #include <limits>
 #include <iomanip>
 
+ScalarConversion::ScalarConversion(void) {}
+ScalarConversion::ScalarConversion(ScalarConversion const&) {}
+ScalarConversion::~ScalarConversion(void) {}
+ScalarConversion& ScalarConversion::operator=(ScalarConversion const& src)
+{
+	(void)src;
+	return *this;
+}
+
+bool verifyNumber(std::string string)
+{
+	int dotCounter = 0;
+	if (string.back() == 'f')
+		string.pop_back();
+	if (string[0] != '-' && isdigit(string[0] == 0))
+		return false;
+	for (size_t i = 1; i < string.length(); i++)
+	{
+		if (string[i] == '.')
+			dotCounter++;
+		if ((isdigit(string[i]) == 0 && string[i] != '.') || dotCounter > 1)
+			return false;
+	}
+	return true;
+}
+
 int	detectType(std::string string)
 {
-	if ((string.find('.') != std::string::npos && string.find('f') != std::string::npos)
+	if ((string.find('.') != std::string::npos && string.back() == 'f')
 		|| string == "-inff" || string == "inff" || string == "nanf")
 		return 0;
 	else if ((string.find('.') != std::string::npos && string.length() > 1)
@@ -52,6 +78,11 @@ void toFloat(std::string string)
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: " << f << "f" << std::endl;
 		std::cout << "double: " << static_cast<double>(f) << std::endl;
+		return;
+	}
+	if (verifyNumber(string) == false)
+	{
+		std::cout << "type conversion is impossible" << std::endl;
 		return;
 	}
 	if (f < 32 || f > 126)
@@ -89,6 +120,11 @@ void toDouble(std::string string)
 		std::cout << "double: " << d << std::endl;
 		return;
 	}
+	if (verifyNumber(string) == false)
+	{
+		std::cout << "type conversion is impossible" << std::endl;
+		return;
+	}
 	if (d < 32 || d > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
@@ -108,13 +144,18 @@ void toInt(std::string string)
 {
 	int	i = 0;
 
+	if (verifyNumber(string) == false)
+	{
+		std::cout << "type conversion is impossible" << std::endl;
+		return;
+	}
 	try
 	{
 		i = stoi(string);
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << " type conversion impossible" << std::endl;
+		std::cout << " type conversion is impossible" << std::endl;
 		return;
 	}
 	if (i < 32 || i > 126)
@@ -129,12 +170,18 @@ void toInt(std::string string)
 
 void toChar(std::string string)
 {
+	if (string.length() > 1)
+	{
+		std::cout << "type conversion is impossible" << std::endl;
+		return;
+	}
+
 	char c = static_cast<char>(string[0]);
 
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
-	std::cout << "float: " << static_cast<float>(c) << std::endl;
-	std::cout << "double: " << static_cast<double>(c) << std::endl;	
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;	
 }
 
 void ScalarConversion::convert(std::string string)
