@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:47:48 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/04 13:05:08 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:21:12 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <algorithm>
 # include <utility>
 # include <numeric>
-
+# include <iterator>
+# include <iostream>
 class Span {
 	
 	public:
@@ -27,10 +28,8 @@ class Span {
 		Span& operator=(Span const& src);
 		
 		void	addNumber(int number);
-		int		shortestSpan();
-		int		longestSpan();
-		void	addMultipleNumbers(unsigned int amount);
-	
+		long	shortestSpan();
+		long	longestSpan();
 		class SpanIsFullException : public std::exception
 		{
 			public:
@@ -42,9 +41,17 @@ class Span {
 			public:
 				virtual const char* what() const throw();
 		};
+		template<typename Iterator>
+		void	addRangeOfNumbers(Iterator first, Iterator last) {
+			if (std::distance(first, last) > static_cast<long>(_N - _span.size()))
+				throw Span::SpanIsFullException();
+			for(Iterator it = first; it != last; ++it) {
+				_span.push_back(*it);	
+			}
+		};
 	private:
 		unsigned int _N;
-		std::vector<int> _span;		
+		std::vector<long> _span;		
 };
 
 #endif

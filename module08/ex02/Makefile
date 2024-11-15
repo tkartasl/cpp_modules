@@ -6,16 +6,15 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 09:11:35 by tkartasl          #+#    #+#              #
-#    Updated: 2024/11/08 15:02:08 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/11/15 13:41:09 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = span
+NAME = mutantStack
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
-SRCS = main.cpp \
-		Span.cpp
+SRCS = main.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 
