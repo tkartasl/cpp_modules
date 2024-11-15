@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:47:48 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/15 10:21:12 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:28:36 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 # include <vector>
 # include <exception>
 # include <algorithm>
-# include <utility>
 # include <numeric>
-# include <iterator>
-# include <iostream>
+
 class Span {
 	
 	public:

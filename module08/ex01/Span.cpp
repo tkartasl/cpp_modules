@@ -6,13 +6,11 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:47:32 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/15 10:21:32 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:27:44 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <iostream>
-#include <numeric>
 
 Span::Span(unsigned int N) : _N(N) {}
 
@@ -57,12 +55,10 @@ long	Span::longestSpan() {
 	return (*result.second - *result.first);
 }
 
-const char* Span::SpanIsFullException::what() const throw()
-{
+const char* Span::SpanIsFullException::what() const throw() {
 	return "Span is already full";
 }
 
-const char* Span::NoSpanFoundException::what() const throw()
-{
+const char* Span::NoSpanFoundException::what() const throw() {
 	return "No span can be found";
 }
