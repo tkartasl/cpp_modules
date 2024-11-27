@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:01:42 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/19 09:53:00 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/11/27 14:46:13 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	try {
-		BitcoinExchange btc(argv[1]);	
+		BitcoinExchange btc(argv[1]);
+		btc.getRates();
 	} catch(std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}

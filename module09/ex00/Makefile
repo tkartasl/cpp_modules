@@ -6,7 +6,7 @@
 #    By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 10:34:01 by tkartasl          #+#    #+#              #
-#    Updated: 2024/11/18 10:35:20 by tkartasl         ###   ########.fr        #
+#    Updated: 2024/11/27 14:30:03 by tkartasl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = btc
 
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
-SRCS = main.cpp
+SRCS = main.cpp \
+		BitcoinExchange.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 
