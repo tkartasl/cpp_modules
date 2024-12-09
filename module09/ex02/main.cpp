@@ -12,6 +12,8 @@ int main(int argc, char* argv[]) {
         input += " ";
     }
     PmergeMe pm(input);
-    pm.sort();
-	return 0;
+    pm.sortVector();
+    pm.sortDeque();
+    pm.printResults();
+    return 0;
 }
