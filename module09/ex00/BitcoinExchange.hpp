@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:56:03 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/27 14:29:23 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/12/10 09:53:59 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ class BitcoinExchange {
 	};
 
 	class InvalidInputfileException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
+
+	class UnableToOpenDatabaseException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw();

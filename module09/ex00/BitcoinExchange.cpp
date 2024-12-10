@@ -6,7 +6,7 @@
 /*   By: tkartasl <tkartasl@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:56:01 by tkartasl          #+#    #+#             */
-/*   Updated: 2024/11/27 15:53:21 by tkartasl         ###   ########.fr       */
+/*   Updated: 2024/12/10 09:53:42 by tkartasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,7 @@ void BitcoinExchange::_loadDatabase() {
 			}
 		}
 		else {
-			throw BitcoinExchange::UnableToOpenFileException();	
+			throw BitcoinExchange::UnableToOpenDatabaseException();	
 		}	
 	} catch (std::exception& e) {
 		throw ;
@@ -279,4 +279,9 @@ const char* BitcoinExchange::UnableToOpenFileException::what() const throw()
 const char* BitcoinExchange::InvalidInputfileException::what() const throw()
 {
 	return "Error: invalid input file";
+}
+
+const char* BitcoinExchange::UnableToOpenDatabaseException::what() const throw()
+{
+	return "Error: could not open database";
 }
