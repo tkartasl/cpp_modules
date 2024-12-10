@@ -11,9 +11,11 @@ int main(int argc, char* argv[]) {
         input += argv[i];
         input += " ";
     }
-    PmergeMe pm(input);
-    pm.sortVector();
-    pm.sortDeque();
-    pm.printResults();
+	try {
+		PmergeMe pm(input);
+		pm.sortVector();
+		pm.sortDeque();
+		pm.printResults();
+	} catch (std::exception& e) {}
     return 0;
 }

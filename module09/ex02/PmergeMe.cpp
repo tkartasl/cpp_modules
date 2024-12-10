@@ -216,7 +216,7 @@ void PmergeMe::sortVector() {
     auto start = std::chrono::high_resolution_clock::now();
     if (!_validateInputVector()) {
         std::cerr << "Error: invalid input" << std::endl;
-        return ;
+        throw std::exception();
     }
     try {
         _mainChain.reserve(_numbers.size());
@@ -433,7 +433,7 @@ void PmergeMe::sortDeque() {
     auto start = std::chrono::high_resolution_clock::now();
     if (!_validateInputDeque()) {
         std::cerr << "Error: invalid input" << std::endl;
-        return ;
+        throw std::exception();
     }
     try {
         _makePairsDeque();

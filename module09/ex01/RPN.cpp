@@ -26,13 +26,16 @@ void RPN::calculate() {
 }
 
 bool RPN::_validateArgument(std::string& arg) {
-    if ((arg == "-" || arg == "+" || arg == "/" || arg == "*") && _stack.size() > 1)
-        return true;
-    for (size_t i = 0; i < arg.length(); i++) {
-        if (!std::isdigit(arg[i]))
-            return false; 
-    }
-    return true;
+	if (arg.length() < 1)
+		return false;
+	if ((arg == "-" || arg == "+" || arg == "/" || arg == "*") && _stack.size() > 1)
+		return true;
+	for (size_t i = 0; i < arg.length(); i++) {
+		if (!std::isdigit(arg[i]))
+			return false; 
+	}
+
+	return true;
 }
 
 bool RPN::_performOperation(std::string& arg) {
